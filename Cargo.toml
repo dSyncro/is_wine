@@ -1,0 +1,18 @@
+[package]
+name = "is_wine"
+version = "0.1.0"
+edition = "2021"
+authors = ["Domenico Mancini"]
+license = "MIT"
+keywords = [
+    "wine",
+    "windows",
+    "linux",
+    "detect",
+    "detection",
+]
+description = "A library to easily check if the current app is running under wine."
+
+[dependencies.windows]
+version = "0.59"
+features = ["Win32_System_LibraryLoader"]
