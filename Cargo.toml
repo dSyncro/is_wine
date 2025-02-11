@@ -1,8 +1,9 @@
 [package]
 name = "is_wine"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Domenico Mancini"]
+repository = "https://github.com/dSyncro/is_wine"
 license = "MIT"
 keywords = [
     "wine",
@@ -11,6 +12,7 @@ keywords = [
     "detect",
     "detection",
 ]
+categories = ["no-std"]
 description = "A library to easily check if the current app is running under wine."
 
 [dependencies.windows]
