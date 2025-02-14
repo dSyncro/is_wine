@@ -40,12 +40,14 @@ mod platform {
     pub fn try_is_wine() -> IsWineResult<bool> {
         let module_handle = unsafe { GetModuleHandleA(NTDLL_MODULE) }.map_err(|_| IsWineError)?;
 
+        // If ntdll module could not be found we return an error. 
+        // NOTE: This should never happen normally but if it does we have a sane default.
         if module_handle.is_invalid() {
-            return Ok(false);
+            return Err(IsWineError);
         }
 
         let address = unsafe { GetProcAddress(module_handle, WINE_DETECTION_PROC) };
-        let detected_wine_symbol = address.map(|_| true).unwrap_or(false);
+        let detected_wine_symbol = address.is_some();
         Ok(detected_wine_symbol)
     }
 
@@ -61,7 +63,7 @@ mod platform {
         false
     }
 
-    pub fn try_is_wine() -> Result<bool, ()> {
+    pub fn try_is_wine() -> IsWineResult<bool> {
         Ok(false)
     }
 
@@ -79,7 +81,7 @@ mod platform {
     }
 
     /// Check if app is running under wine. Returns an error on failure.
-    pub fn try_is_wine() -> Result<bool, ()> {
+    pub fn try_is_wine() -> IsWineResult<bool> {
         unimplemented!()
     }
 

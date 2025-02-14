@@ -3,7 +3,7 @@
 # is_wine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/dSyncro/is_wine/blob/main/README.md)
-![Version](https://img.shields.io/badge/version-0.1.1-green)
+![Version](https://img.shields.io/badge/version-0.1.2-green)
 
 A library to easily check if the current app is running under wine.
 

@@ -1,6 +1,6 @@
 [package]
 name = "is_wine"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Domenico Mancini"]
 repository = "https://github.com/dSyncro/is_wine"
